@@ -18,11 +18,15 @@
     <select
         name="scraper" id="scraper"
         class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-        @foreach($source->scrapers as $scraper => $name)
-            <option value="{{ $scraper }}" @if($source->scraper === $scraper) selected @endif>{{ $name }}</option>
+        @foreach($scrapers as $scraper => $name)
+            <option value="{{ $scraper }}"
+            @isset($source)
+                @if($source->scraper === $scraper) selected @endif
+            @endisset
+            >{{ $name }}</option>
         @endforeach
-{{--        <option value="\App\Scrapers\SearchScraper">Search</option>--}}
-{{--        <option value="\App\Scrapers\GenerateScraper">Generate</option>--}}
+        {{--        <option value="\App\Scrapers\SearchScraper">Search</option>--}}
+        {{--        <option value="\App\Scrapers\GenerateScraper">Generate</option>--}}
     </select>
 </div>
 
@@ -62,8 +66,12 @@
     <select
         name="lang" id="lang"
         class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-        @foreach($source->locales as $locale => $value)
-            <option value="{{ $locale }}" @if($source->lang === $locale) selected @endif>{{ $value }}</option>
+        @foreach($locales as $locale => $value)
+            <option value="{{ $locale }}"
+            @isset($source)
+                @if($source->lang === $locale) selected @endif
+            @endisset
+            >{{ $value }}</option>
         @endforeach
     </select>
 </div>

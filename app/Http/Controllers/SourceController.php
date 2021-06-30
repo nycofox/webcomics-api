@@ -11,7 +11,9 @@ class SourceController extends Controller
     public function create(Webcomic $webcomic)
     {
         return view('sources.create', [
-            'webcomic' => $webcomic
+            'webcomic' => $webcomic,
+            'scrapers' => $this->scrapers(),
+            'locales' => $this->locales(),
         ]);
     }
 
@@ -43,6 +45,8 @@ class SourceController extends Controller
         return view('sources.edit', [
             'webcomic' => $webcomic,
             'source' => $source,
+            'scrapers' => $this->scrapers(),
+            'locales' => $this->locales(),
         ]);
     }
 
@@ -74,5 +78,22 @@ class SourceController extends Controller
         \Artisan::call('webcomics:scrape', ['source' => $source->id]);
 
         return \Artisan::output();
+    }
+
+    private function scrapers(): array
+    {
+        return [
+            'App\Scrapers\SearchScraper' => 'Search',
+            'App\Scrapers\GenerateScraper' => 'Generate',
+        ];
+    }
+
+    private function locales(): array
+    {
+        return [
+            'nb' => 'Norwegian',
+            'en' => 'English',
+            'sv' => 'Swedish'
+        ];
     }
 }

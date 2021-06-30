@@ -47,31 +47,4 @@ class Source extends Model
         return parse_url($this->homepage, PHP_URL_HOST);
     }
 
-    public function getLocalesAttribute(): array
-    {
-        return $this->locales();
-    }
-
-    private function locales(): array
-    {
-        return [
-            'nb' => 'Norwegian',
-            'en' => 'English',
-            'sv' => 'Swedish'
-        ];
-    }
-
-    public function getScrapersAttribute(): array
-    {
-        return $this->scrapers();
-    }
-
-    private function scrapers(): array
-    {
-        return [
-            'App\Scrapers\SearchScraper' => 'Search',
-            'App\Scrapers\GenerateScraper' => 'Generate',
-        ];
-    }
-
 }
