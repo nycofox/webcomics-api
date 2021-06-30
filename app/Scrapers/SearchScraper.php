@@ -12,7 +12,7 @@ class SearchScraper extends WebcomicScraper
 
     public function getImageUrl(Source $source)
     {
-        $url = $source->searchpage_comic ?? $source->homepage;
+        $url = $source->searchpage ?? $source->homepage;
 
         $searchpage = Http::get($this->convertUrl($url));
 
