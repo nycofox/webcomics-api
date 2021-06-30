@@ -12,6 +12,13 @@
              value="{{ $source->name ?? old('name')}}" required/>
 </div>
 
+<!-- Searchpage -->
+<div class="mb-2">
+    <x-label for="searchpage" value="Searchpage"/>
+    <x-input id="searchpage" class="block mt-1 w-full" type="text" name="searchpage"
+             value="{{ $source->searchpage ?? old('searchpage')}}"/>
+</div>
+
 <!-- Scraper -->
 <div class="mb-2">
     <x-label for="scraper" value="Scraper"/>
