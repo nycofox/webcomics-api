@@ -24,7 +24,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('webcomics:scrapeall')
+            ->hourly()
+            ->appendOutputTo( storage_path('logs/webcomics-') . date('Y-m-d') . '.log');
     }
 
     /**

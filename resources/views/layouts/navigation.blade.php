@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('webcomics.index')" :active="request()->routeIs('webcomics.*')">
                         Webcomics
                     </x-nav-link>
+                    <x-nav-link :href="url('admin/log-reader')">
+                        Log Reader
+                    </x-nav-link>
                 </div>
             </div>
 
