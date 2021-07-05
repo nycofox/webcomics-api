@@ -44,6 +44,13 @@
              value="{{ $source->searchstring_comic ?? old('searchstring')}}" required/>
 </div>
 
+<!-- Base URL -->
+<div class="mb-2">
+    <x-label for="baseurl" value="Base URL"/>
+    <x-input id="baseurl" class="block mt-1 w-full" type="text" name="baseurl"
+             value="{{ $source->baseurl ?? old('baseurl')}}" />
+</div>
+
 <!-- Searchstring Title -->
 <div class="mb-2">
     <x-label for="searchstring_title" value="Searchstring (title)"/>
@@ -54,16 +61,14 @@
 <!-- Searchstring description -->
 <div class="mb-2">
     <x-label for="searchstring_description" value="Searchstring (description)"/>
-    <x-input id="searchstring_description" class="block mt-1 w-full" type="text"
-             name="searchstring_description"
+    <x-input id="searchstring_description" class="block mt-1 w-full" type="text" name="searchstring_description"
              value="{{ $source->searchstring_description ?? old('searchstring_description')}}"/>
 </div>
 
 <!-- Searchstring number -->
 <div class="mb-2">
     <x-label for="searchstring_number" value="Searchstring (number)"/>
-    <x-input id="searchstring_number" class="block mt-1 w-full" type="text"
-             name="searchstring_number"
+    <x-input id="searchstring_number" class="block mt-1 w-full" type="text" name="searchstring_number"
              value="{{ $source->searchstring_number ?? old('searchstring_number')}}"/>
 </div>
 

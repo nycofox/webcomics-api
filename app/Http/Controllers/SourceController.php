@@ -28,6 +28,7 @@ class SourceController extends Controller
         $webcomic->sources()->create([
             'homepage' => $request->homepage,
             'searchpage' => $request->searchpage,
+            'baseurl' => $request->baseurl,
             'name' => $request->name,
             'searchstring_comic' => $request->searchstring,
             'searchstring_title' => $request->searchstring_title,
@@ -62,6 +63,7 @@ class SourceController extends Controller
         $source->update([
             'homepage' => $request->homepage,
             'searchpage' => $request->searchpage,
+            'baseurl' => $request->baseurl,
             'name' => $request->name,
             'searchstring_comic' => $request->searchstring,
             'searchstring_title' => $request->searchstring_title,
