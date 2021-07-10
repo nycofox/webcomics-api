@@ -110,4 +110,11 @@ class WebcomicController extends Controller
     {
         //
     }
+
+    public function scrapeAll()
+    {
+        \Artisan::call('webcomics:scrapeall');
+
+        return \Artisan::output();
+    }
 }

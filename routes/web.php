@@ -24,6 +24,10 @@ Route::get('/', function () {
 require __DIR__ . '/auth.php';
 
 Route::group(['middleware' => 'auth'], function () {
+    
+    Route::get('webcomics/scrapeall', [App\Http\Controllers\WebcomicController::class, 'scrapeAll'])
+        ->name('webcomics.scrapeall');
+
     Route::resource('webcomics', App\Http\Controllers\WebcomicController::class);
     Route::get('webcomics/{webcomic}/sources/create', [App\Http\Controllers\SourceController::class, 'create'])
         ->name('webcomics.sources.create');

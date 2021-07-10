@@ -29,7 +29,10 @@
                     </tbody>
                 </table>
             </div>
-            <div><a href="{{ route('webcomics.create') }}"><i class="fa fa-plus"></i> Add new webcomic</a></div>
+            <div class="flex justify-between">
+                <a href="{{ route('webcomics.create') }}"><i class="fa fa-plus"></i> Add new webcomic</a>
+                <a href="{{ route('webcomics.scrapeall') }}">Scrape all sources</a>
+            </div>
         </x-card>
     </div>
 </x-app-layout>
