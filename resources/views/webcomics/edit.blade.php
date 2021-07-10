@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Webcomics -
+            <a href="{{ route('webcomics.index') }}">Webcomics</a> -
             <a href="{{ route('webcomics.show', $webcomic) }}">Edit {{ $webcomic->name }}</a>
         </h2>
     </x-slot>
