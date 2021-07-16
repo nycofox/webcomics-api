@@ -14,7 +14,7 @@ class GenerateScraper extends WebcomicScraper
      * @param Source $source
      * @return string
      */
-    public function getImageUrl(Source $source)
+    public function getImageUrl(Source $source): ?string
     {
         return $this->convertUrl($source->searchstring_comic);
     }

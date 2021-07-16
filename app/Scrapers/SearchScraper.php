@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Http;
 class SearchScraper extends WebcomicScraper
 {
 
-    public function getImageUrl(Source $source)
+    public function getImageUrl(Source $source): ?string
     {
         $url = $source->searchpage ?? $source->homepage;
 

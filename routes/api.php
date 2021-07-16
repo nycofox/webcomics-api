@@ -22,4 +22,5 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::get('strips/{date?}', [App\Http\Controllers\Api\ComicController::class, 'strips']);
     Route::get('webcomics', [App\Http\Controllers\Api\ComicController::class, 'webcomics']);
     Route::get('strip/{strip}', [App\Http\Controllers\Api\ComicController::class, 'show']);
+    Route::post('report/strip/{strip}', [\App\Http\Controllers\ReportController::class, 'strip']);
 });

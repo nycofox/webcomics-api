@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\Reportable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Strip extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, Reportable;
 
     protected $guarded = [];
 

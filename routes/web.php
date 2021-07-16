@@ -24,7 +24,7 @@ Route::get('/', function () {
 require __DIR__ . '/auth.php';
 
 Route::group(['middleware' => 'auth'], function () {
-    
+
     Route::get('webcomics/scrapeall', [App\Http\Controllers\WebcomicController::class, 'scrapeAll'])
         ->name('webcomics.scrapeall');
 
@@ -39,5 +39,11 @@ Route::group(['middleware' => 'auth'], function () {
         ->name('webcomics.sources.edit');
     Route::patch('webcomics/{webcomic}/sources/{source}', [App\Http\Controllers\SourceController::class, 'update'])
         ->name('webcomics.sources.update');
+
+    Route::get('reports', [\App\Http\Controllers\ReportController::class, 'index'])
+        ->name('reports.index');
+
+    Route::get('sources', [\App\Http\Controllers\SourceController::class, 'index'])
+        ->name('sources.index');
 
 });

@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class SourceController extends Controller
 {
+    public function index()
+    {
+        return view('sources.index', [
+            'sources' => Source::with('webcomic')
+                ->orderBy('last_scraped_at', 'desc')->get()
+        ]);
+    }
+
     public function create(Webcomic $webcomic)
     {
         return view('sources.create', [
