@@ -26,7 +26,9 @@
                                     {{ $source->name }}
                                 </a>
                             </td>
-                            <td class="py-3 px-6 text-left">{{ $source->homepage }}</td>
+                            <td class="py-3 px-6 text-left">
+                                <a href="{{ $source->homepage }}" target="_blank">{{ $source->homepage }}</a>
+                            </td>
                             <td class="py-3 px-6 text-left">{{ $source->webcomic->name }}</td>
                             <td class="py-3 px-6 text-left">
                                 {{ $source->last_scraped_at ? $source->last_scraped_at->diffForHumans() : 'Never' }}
