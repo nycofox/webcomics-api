@@ -24,7 +24,7 @@
                     @foreach($sources as $source)
                         <tr class="border-b border-gray-200 hover:bg-gray-100">
                             <td class="py-3 px-6 text-left">
-                                <a href="{{ $source->homepage }}" target="_blank">{{ $source->homepage }}</a>
+                                <a href="{{ config('services.dereferer.url') . $source->homepage }}" target="_blank">{{ $source->homepage }}</a>
                             </td>
                             <td class="py-3 px-6 text-left">
                                 {{ $source->last_scraped_at ? $source->last_scraped_at->diffForHumans() : 'Never' }}
