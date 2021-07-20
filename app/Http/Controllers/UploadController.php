@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Source;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class UploadController extends Controller
 {
     public function store(Request $request)
     {
         $request->validate([
-            'source' => '', // Must be a valid source
+            'source' => '', // Todo: Must be a valid source
             'date' => 'required|date',
             'file' => 'required|mimes:jpeg,png,gif,webp',
         ]);
@@ -29,6 +30,8 @@ class UploadController extends Controller
             'image_filesize' => 0,
             'date' => $request->date,
         ]);
+
+        // Todo: Return status of upload
 
         return redirect()->back();
     }
