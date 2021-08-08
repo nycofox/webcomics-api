@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Strip;
 use App\Models\Webcomic;
 use Carbon\Carbon;
+use DateTime;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -63,6 +65,13 @@ class ComicController extends Controller
          */
         if (!$date) {
             return Carbon::now();
+        }
+
+        /*
+         * If date looks completely weird, return null
+         */
+        if(!strtotime($date) ) {
+            return null;
         }
 
         /*
