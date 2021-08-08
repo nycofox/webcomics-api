@@ -27,7 +27,7 @@
                                 </a>
                             </td>
                             <td class="py-3 px-6 text-left">
-                                <a href="{{ $source->homepage }}" target="_blank">{{ $source->homepage }}</a>
+                                <a href="{{ config('services.dereferer.url') . $source->homepage }}" target="_blank">{{ $source->homepage }}</a>
                             </td>
                             <td class="py-3 px-6 text-left">{{ $source->webcomic->name }}</td>
                             <td class="py-3 px-6 text-left">
