@@ -57,7 +57,7 @@ class ScrapeComic extends Command
         $this->line('  Found image at url: ' . $imageurl);
 
         if (!$image = $scraper->downloadImage($imageurl, $source)) {
-            $this->warn('Failed downloading image with url ' . $imageurl . ' , skipping...');
+            $this->warn('  Failed downloading image with url ' . $imageurl . ' , skipping...');
             return null;
         }
 
